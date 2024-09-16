@@ -21,7 +21,7 @@ parser.add_argument('--heterodyne', '-z',
 args = parser.parse_args()
 
 if args.session is None:
-    session = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+    session = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 else:
     session = args.session
 
