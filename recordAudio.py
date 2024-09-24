@@ -37,7 +37,7 @@ print('SavingFile in '+saveDirectory)
 c= 'AudioMoth-Live ' + args.sampleRate
 c=c + ' autosave ' + args.autoSaveInterval + ' ' + saveDirectory
 
-if args.session is not None:
+if args.heterodyne is not None:
     c=c + ' heterodyne ' + args.heterodyne
 
 print('starting audio recording')
