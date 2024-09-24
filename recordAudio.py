@@ -15,8 +15,8 @@ parser.add_argument('--session', '-s',
                     help='Name session, which determines the folder name in which the video will be saved. Defaults to date and time'
                     )
 parser.add_argument('--heterodyne', '-z', 
-                    help='Heterodyne frequency for audio output (default 20,000 Hz)',
-                    default='20000')
+                    help='Heterodyne frequency for audio output (default 20,000 Hz)'
+                    )
 
 args = parser.parse_args()
 
@@ -36,7 +36,9 @@ print('SavingFile in '+saveDirectory)
 
 c= 'AudioMoth-Live ' + args.sampleRate
 c=c + ' autosave ' + args.autoSaveInterval + ' ' + saveDirectory
-c=c + ' heterodyne ' + args.heterodyne
+
+if args.session is not None:
+    c=c + ' heterodyne ' + args.heterodyne
 
 print('starting audio recording')
 os.system(c)
